@@ -1,0 +1,175 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <title>Layout Website</title>
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <!-- Membuat header -->
+         <div class="header">
+         </div>
+         <!-- Membuat navigator menu -->
+          <div class="topnav">
+            <a href="biodata1.html">Biodata</a>
+            <a href="table_merge.html">Table</a>
+            <a href="list.html">List</a>
+            <a href="sts_91_7.html">STS</a>
+          </div>
+          <!-- Membuat content -->
+          <h2>Selamat Datang di Web Pertama Saya</h2>
+        <h1>BIODATA DIRI</h1>
+
+        <div class="biodata">
+            <div class="content"> 
+                <div class="foto">
+                    <img src="now call.jpeg" alt="foto call" class="top">
+                    <img src="kecil call.jpeg" alt="foto kecil call" class="bottom">
+                </div>
+
+                <div class="isi">
+                    <p>Nama lengkap : Catharina Callista Nadine Widhiantoro</p>
+                    <p>Tanggal lahir: 11 November 2011</p>
+                    <p>Tempat lahir: Jakarta </p>
+                    <p>Alamat : jakarta timur</p>
+                    <p>Email:catharina_10082@smp.santaursulajakarta.sch.id</p>
+                    <p>Hobi: Menyanyi dan Bermain</p>
+                    <p>Motto: just do it</p>
+                    <p>Percaya pada diri mu sendiri!</p>
+                </div>
+            </div> 
+        </div> 
+
+        <h2>Makanan favorit</h2>
+        <div class="Makanan">
+            <div class="sushi">
+                <img src="sushi.jpg" alt="sushi" width="200" height="200">
+                <p>Sushi</p>
+            </div>
+            <div class="Burger">
+                <img src="burger.jpg" alt="Burger" width="200" height="200">
+                <p>Burger</p>
+            </div>
+            <div class="Pizza">
+                <img src="pizza.jpg" alt="Pizza" width="200" height="200">
+                <P>Pizza</P>
+            </div>
+            <div class="SourSally">
+                <img src="soursally.jpg" alt="SourSally" width="200" height="200">
+                <p>Sour sally</p>
+            </div>
+            <div class="SaladStop"> 
+                <img src="saladstop.png" alt="SaladStop" width="200" height="200">
+                <p>Salad Stop</p>
+            </div>
+        </div>
+      
+        <h2>Hobi</h2>
+        <div class="Hobi">
+            <div class="Menyanyi">
+                 <img src="menyanyi.jpeg" alt="Menyanyi" width="200" height="200">
+                 <p>Menyanyi</p>
+                </div>
+                <div class="Nontonkonser">
+                    <img src="konser.jpg" alt="Menonton konser" width="200" height="200">
+                    <p>Menonton konser</p>
+                </div>
+                <div class="Photobooth">
+                    <img src="photobooth.jpeg" alt="Photobooth" width="200" height="200">
+                    <p>Photobooth</p>
+                </div>
+                <div class="Baking">
+                    <img src="baking.jpg" alt="Baking" width="200" height="200">
+                    <p>Baking</p>
+                </div>
+                <div class="Organisasi">
+                    <img src="organisasi.jpeg" alt="Join Organisasi" width="200" height="200">
+                    <p>Join Organisasi</p>
+                </div>
+            </div> 
+
+            <h2>Lagu Favorit</h2>
+            <div class="playlist-container">
+                <div class="card-piringan" onclick="putarMusik(this, 'audio1')">
+                    <img src="piringan.png" alt="Piringan Hitam" class="piringan-img">
+                    <img src="hivi.png" alt="hivi" class="foto-img">
+                    <p class="judul-text">Indahnya Dirimu-HIVI</p>
+                    <audio id="audio1" src="lagu-hivi.mp3"></audio>
+                </div>
+                
+                <div class="card-piringan" onclick="putarMusik(this, 'audio2')">
+                    <img src="piringan.png" alt="Piringan Hitam" class="piringan-img">
+                    <img src="coboy.png" alt="coboy" class="foto-img">
+                    <p class="judul-text">Kamu-Coboy Junior</p>
+                    <audio id="audio2" src="lagu-coboy.mp3"></audio>
+                </div>
+
+                <div class="card-piringan" onclick="putarMusik(this, 'audio3')">
+                    <img src="piringan.png" alt="Piringan Hitam" class="piringan-img">
+                    <img src="bruno.png" alt="bruno" class="foto-img">
+                    <p class="judul-text">24 K-Bruno Mars</p>
+                    <audio id="audio3" src="lagu-bruno.mp3"></audio>
+                </div>
+                
+                <div class="card-piringan" onclick="putarMusik(this, 'audio4')">
+                    <img src="piringan.png" alt="Piringan Hitam" class="piringan-img">
+                    <img src="Nct.png" alt="Nct" class="foto-img">
+                    <p class="judul-text">Dream Team-Nct Dream</p>
+                    <audio id="audio4" src="lagu-Nct.mp3"></audio>
+                </div>
+                
+                <div class="card-piringan" onclick="putarMusik(this, 'audio5')">
+                    <img src="piringan.png" alt="Piringan Hitam" class="piringan-img">
+                    <img src="tasya.png" alt="tasya" class="foto-img">
+                    <p class="judul-text">Say No-Tasya Kamila</p>
+                    <audio id="audio5" src="lagu-tasya.mp3"></audio>
+                </div>
+            </div>
+          <script>
+function putarMusik(card, audioId) {
+    var piringan = card.querySelector(".piringan-img");
+    var foto = card.querySelector(".foto-img");
+    var audio = document.getElementById(audioId);
+
+    
+    document.querySelectorAll("audio").forEach(a => {
+        if (a !== audio) {
+            a.pause();
+            a.currentTime = 0;
+        }
+    });
+    document.querySelectorAll(".card-piringan").forEach(c => {
+        if (c !== card) {
+            var p = c.querySelector(".piringan-img");
+            var f = c.querySelector(".foto-img");
+            p.classList.remove("spin");
+            p.style.display = "block";
+            f.style.display = "none";
+        }
+    });
+
+    
+    if (audio.paused) {
+        piringan.classList.add("spin"); 
+
+        
+        setTimeout(function() {
+            piringan.classList.remove("spin");
+            piringan.style.display = "none"; 
+            foto.style.display = "block";   
+            audio.play();                   
+        }, 1000); 
+
+    } else {
+        audio.pause();
+        piringan.style.display = "block";
+        foto.style.display = "none";
+    }
+}
+</script>
+
+           <!-- Membuat Footer -->
+            <div class="footer">
+                <h2>Footer</h2>
+            </div>
+    </body>
+</html>
